@@ -1,0 +1,128 @@
+.timer {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border: 10px solid #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4caf50;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.settings {
+  margin-top: 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.settings label {
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.settings input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+
+
+
+/* Estilo base del contenedor del toggle */
+.sessionToggle {
+  overflow: hidden; /* Esencial para la animación de altura */
+  height: 0; /* Cerrado por defecto */
+  opacity: 0; /* Transparente por defecto */
+  transition: height 0.3s ease, opacity 0.3s ease;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0 10px; /* Padding horizontal inicial */
+}
+
+/* Estilo abierto */
+.sessionToggle.open {
+  height: 100px; /* Altura deseada */
+  opacity: 1;
+  padding: 10px; /* Restaura padding vertical */
+}
+
+/* Estilo cerrado */
+.sessionToggle.closed {
+  height: 0;
+  opacity: 0;
+  padding: 0 10px; /* Solo padding horizontal */
+}
+
+/* Estilo adicional para inputs y botones */
+.sessionToggle label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sessionToggle input {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 60px;
+}
+
+.sessionToggle button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.sessionToggle button:hover {
+  background-color: #45a049;
+}
+
+.TxtSessions{
+  font-size: 30px;
+}

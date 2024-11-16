@@ -1,0 +1,9 @@
+.circle.break {
+  border-color: #ffa726;
+  color: #ffa726;
+}
+
+.circle.paused {
+  border-color: #bdbdbd;
+  color: #bdbdbd;
+}

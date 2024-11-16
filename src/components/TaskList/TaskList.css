@@ -1,0 +1,42 @@
+.taskList {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.taskItem:hover {
+  background: #f0f0f0;
+}
+
+.taskItem span {
+  cursor: pointer;
+  flex: 1;
+  text-align: left;
+}
+
+button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #ff5252;
+}
