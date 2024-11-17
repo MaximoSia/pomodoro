@@ -1,0 +1,94 @@
+/* Estilo del botón de abrir/cerrar configuración */
+.session-config-toggle {
+  background-color: #4caf50;
+  /* Verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.session-config-toggle:hover {
+  background-color: #45a049;
+  /* Verde más oscuro */
+}
+
+/* Fondo oscuro cuando aparece el modal */
+.session-config-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+/* Contenedor del modal */
+.session-config-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 300px;
+  z-index: 1000;
+}
+
+/* Etiqueta para texto */
+.session-config-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Campo de entrada */
+.session-config-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Botones en el modal */
+.session-config-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.session-config-button {
+  flex: 1;
+  margin: 0 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.session-config-button:hover {
+  background-color: #45a049;
+}
+
+.session-config-button--cancel {
+  background-color: #f44336;
+  /* Rojo */
+}
+
+.session-config-button--cancel:hover {
+  background-color: #d32f2f;
+  /* Rojo más oscuro */
+}

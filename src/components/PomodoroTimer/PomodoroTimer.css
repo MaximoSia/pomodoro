@@ -6,6 +6,15 @@
   text-align: center;
 }
 
+.timer h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #958349;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  animation: fadeIn 1s ease-in-out;
+}
+
 button {
   background-color: #4caf50;
   color: white;

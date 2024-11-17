@@ -11,31 +11,53 @@ const SessionConfig = ({
 
   const handleAccept = () => {
     onAccept(newSessionCount);
+    setShowSessionToggle(false); // Cierra el modal tras aceptar
   };
 
   return (
     <>
-      <button onClick={() => setShowSessionToggle((pev) => !pev)}>
+      <button
+        className="session-config-toggle"
+        onClick={() => setShowSessionToggle((prev) => !prev)}
+      >
         Configuración de sesiones
-      </button >
+      </button>
+
       {show && (
-        <div>
-          <label>
-            Número de Pomodoros:{" "}
+        <>
+          <div
+            className="session-config-overlay"
+            onClick={() => setShowSessionToggle(false)}
+          ></div>
+
+          <div className="session-config-container">
+            <div className="session-config-label">
+              Número de Pomodoros:
+            </div>
             <input
               type="number"
+              className="session-config-input"
               min="1"
               value={newSessionCount}
               onChange={(e) => setNewSessionCount(Number(e.target.value))}
             />
-          </label>
-          <div>
-            <button onClick={handleAccept}>Aceptar</button>
-            <button onClick={() => setShowSessionToggle(false)}>Cancelar</button>
+            <div className="session-config-buttons">
+              <button
+                className="session-config-button"
+                onClick={handleAccept}
+              >
+                Aceptar
+              </button>
+              <button
+                className="session-config-button session-config-button--cancel"
+                onClick={() => setShowSessionToggle(false)}
+              >
+                Cancelar
+              </button>
+            </div>
           </div>
-        </div>
-      )
-      }
+        </>
+      )}
     </>
   );
 };
