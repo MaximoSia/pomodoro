@@ -21,12 +21,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
 button {
   background-color: #4caf50;
   color: white;
@@ -70,28 +64,35 @@ button:active {
 
 /* Estilo base del contenedor del toggle */
 .sessionToggle {
-  overflow: hidden; /* Esencial para la animación de altura */
-  height: 0; /* Cerrado por defecto */
-  opacity: 0; /* Transparente por defecto */
+  overflow: hidden;
+  /* Esencial para la animación de altura */
+  height: 0;
+  /* Cerrado por defecto */
+  opacity: 0;
+  /* Transparente por defecto */
   transition: height 0.3s ease, opacity 0.3s ease;
   background-color: #f4f4f4;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 0 10px; /* Padding horizontal inicial */
+  padding: 0 10px;
+  /* Padding horizontal inicial */
 }
 
 /* Estilo abierto */
 .sessionToggle.open {
-  height: 100px; /* Altura deseada */
+  height: 100px;
+  /* Altura deseada */
   opacity: 1;
-  padding: 10px; /* Restaura padding vertical */
+  padding: 10px;
+  /* Restaura padding vertical */
 }
 
 /* Estilo cerrado */
 .sessionToggle.closed {
   height: 0;
   opacity: 0;
-  padding: 0 10px; /* Solo padding horizontal */
+  padding: 0 10px;
+  /* Solo padding horizontal */
 }
 
 /* Estilo adicional para inputs y botones */
@@ -123,6 +124,6 @@ button:active {
   background-color: #45a049;
 }
 
-.TxtSessions{
+.TxtSessions {
   font-size: 30px;
 }
