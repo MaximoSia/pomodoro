@@ -77,6 +77,7 @@ const PomodoroTimer = ({ task }) => {
       <p>{`Pomodoro ${Math.floor(currentPomodoro / 2) + 1}/${sessionCount}`}</p>
 
       <TimerDisplay timeLeft={timeLeft} isBreak={isBreak} />
+
       <Control
         isRunning={isRunning}
         toggleTimer={() => setIsRunning((prev) => !prev)}
