@@ -42,3 +42,8 @@ button:active {
   transform: scale(1.2);
   cursor: pointer;
 }
+
+
+.txtSession {
+  font-size: 30px;
+}

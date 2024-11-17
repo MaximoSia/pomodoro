@@ -81,7 +81,7 @@ const PomodoroTimer = ({ task }) => {
   return (
     <div className="timer">
       <h2>{isBreak ? "Tiempo de Descanso" : `Tarea actual: ${task?.name || "Ninguna"}`}</h2>
-      <p>{`Pomodoro ${Math.floor(currentPomodoro / 2) + 1}/${sessionCount}`}</p>
+      <p className="txtSession">{`Pomodoro ${Math.floor(currentPomodoro / 2) + 1}/${sessionCount}`}</p>
 
       <TimerDisplay timeLeft={timeLeft} isBreak={isBreak} />
 
