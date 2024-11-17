@@ -3,6 +3,8 @@ import TimerDisplay from "./TimerDisplay/TimerDisplay";
 import Control from "./Control/Control";
 import SessionConfig from "./SessionConfig/SessionConfig";
 import "./PomodoroTimer.css";
+import startSound from '../../sounds/start.mp3';
+import breakSound from '../../sounds/break.mp3';
 
 const PomodoroTimer = ({ task }) => {
   const INITIAL_TIME = 0.1 * 60; // Tiempo inicial del Pomodoro (25 minutos)
@@ -35,7 +37,7 @@ const PomodoroTimer = ({ task }) => {
   useEffect(() => {
     if (timeLeft > 0) return;
 
-    if (currentPomodoro >= sessionCount) {
+    if (currentPomodoro >= sessionCount * 2) {
       handleSessionComplete();
     } else {
       setCurrentPomodoro((prev) => prev + 1);
@@ -44,11 +46,15 @@ const PomodoroTimer = ({ task }) => {
       // Pausar el temporizador después de cada período
       setIsRunning(false);
 
-      if (autoStartBreak) {
+      // Reproducir sonido al finalizar un pomodoro
+      const audio = new Audio(breakSound);
+      audio.play();
+
+      if (autoStartBreak && !isBreak) {
         setIsRunning(true);
       }
     }
-  }, [timeLeft]);
+  }, [timeLeft, currentPomodoro, sessionCount, isBreak, autoStartBreak]);
 
   // Manejo de completar la sesión
   const handleSessionComplete = () => {
@@ -70,12 +76,18 @@ const PomodoroTimer = ({ task }) => {
     }
   };
 
-
   // Manejo de la configuración de sesión
   const handleSessionAccept = (newSessionCount) => {
     setSessionCount(newSessionCount);
     setShowSessionToggle(false);
     resetTimer();
+  };
+
+  const handleStart = () => {
+    setIsRunning(true);
+    // Reproducir sonido al iniciar un pomodoro
+    const audio = new Audio(startSound);
+    audio.play();
   };
 
   return (
@@ -87,7 +99,10 @@ const PomodoroTimer = ({ task }) => {
 
       <Control
         isRunning={isRunning}
-        toggleTimer={() => setIsRunning((prev) => !prev)}
+        toggleTimer={() => {
+          if (!isRunning) handleStart();
+          else setIsRunning(false);
+        }}
         resetTimer={resetTimer}
       />
 
@@ -108,7 +123,6 @@ const PomodoroTimer = ({ task }) => {
           Iniciar descanso automáticamente
         </label>
       </div>
-
     </div>
   );
 };
