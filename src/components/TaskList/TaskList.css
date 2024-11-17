@@ -1,38 +1,63 @@
 .taskList {
-  background: #ffffff;
-  border: 1px solid #ddd;
+  background: #f4f4f4;
+  /* Ajuste de color de fondo para que coincida con PomodoroTimer */
+  border: 1px solid #ccc;
+  /* Ajuste de color de borde */
   border-radius: 8px;
   padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Añadir sombra para consistencia */
+  margin: 20px 0;
+  /* Añadir margen para separación */
 }
 
 .listTask {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  /* Eliminar viñetas de la lista */
 }
 
 .taskItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 4px;
-  transition: background 0.2s;
-  margin: 0px 10%;
-  padding: 10px;
+  border-radius: 8px;
+  /* Ajuste de borde redondeado */
+  transition: background 0.2s, box-shadow 0.2s;
+  /* Añadir transición para sombra */
+  margin: 10px 0;
+  /* Ajuste de margen para consistencia */
+  padding: 15px;
+  /* Ajuste de padding para consistencia */
   cursor: pointer;
+  background: #fff;
+  /* Fondo blanco para las tareas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Añadir sombra para consistencia */
 }
 
 .taskItem:hover {
-  background: #e0d0d0;
+  background: #e0e0e0;
+  /* Ajuste de color de fondo al pasar el ratón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Aumentar sombra al pasar el ratón */
 }
 
 .taskItem span {
   flex: 1;
   text-align: left;
+  font-size: 1rem;
+  /* Ajuste de tamaño de fuente para consistencia */
+  color: #333;
+  /* Ajuste de color de texto */
 }
 
 button {
   background-color: #ff6b6b;
+  /* Color de fondo del botón */
   color: white;
+  /* Color del texto del botón */
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
@@ -43,4 +68,5 @@ button {
 
 button:hover {
   background-color: #f64242;
+  /* Color de fondo del botón al pasar el ratón */
 }
