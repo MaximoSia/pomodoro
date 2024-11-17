@@ -6,10 +6,10 @@ const TaskList = ({ tasks, onAdd, onEdit, onDelete, onSelect }) => (
   <div className="taskList">
     <h2>Tareas</h2>
     <TaskForm onSubmit={onAdd} />
-    <ul>
+    <ul className="listTask">
       {tasks.map((task) => (
-        <li key={task.id} className="taskItem">
-          <span onClick={() => onSelect(task)}>{task.name}</span>
+        <li key={task.id} className="taskItem" onClick={() => onSelect(task)}>
+          <span>{task.name}</span>
           <button onClick={() => onDelete(task.id)}>Eliminar</button>
         </li>
       ))}

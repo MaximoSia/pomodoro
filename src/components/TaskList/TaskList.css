@@ -3,25 +3,29 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  margin-bottom: 20px;
+}
+
+.listTask {
+  padding: 0px;
+  margin: 0px;
 }
 
 .taskItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
-  padding: 10px;
   border-radius: 4px;
   transition: background 0.2s;
+  margin: 0px 10%;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .taskItem:hover {
-  background: #f0f0f0;
+  background: #e0d0d0;
 }
 
 .taskItem span {
-  cursor: pointer;
   flex: 1;
   text-align: left;
 }
@@ -38,5 +42,5 @@ button {
 }
 
 button:hover {
-  background-color: #ff5252;
+  background-color: #f64242;
 }

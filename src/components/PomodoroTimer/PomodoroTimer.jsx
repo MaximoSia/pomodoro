@@ -62,6 +62,7 @@ const PomodoroTimer = ({ task }) => {
   const resetTimer = () => {
     setIsRunning(false);
     setTimeLeft(INITIAL_TIME);
+    setCurrentPomodoro(0);
   };
 
   // Manejo de la configuración de sesión
