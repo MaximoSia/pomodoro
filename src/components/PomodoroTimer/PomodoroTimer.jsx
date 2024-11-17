@@ -58,12 +58,18 @@ const PomodoroTimer = ({ task }) => {
     setCurrentPomodoro(0);
   };
 
-  // Reiniciar temporizador
   const resetTimer = () => {
     setIsRunning(false);
+
+    // Siempre reinicia hacia el estado de concentración
     setTimeLeft(INITIAL_TIME);
-    setCurrentPomodoro(0);
+
+    // Si estás en descanso, regresa a la concentración ajustando currentPomodoro al inicio de un Pomodoro
+    if (isBreak) {
+      setCurrentPomodoro((prev) => prev - 1); // Vuelve al Pomodoro anterior
+    }
   };
+
 
   // Manejo de la configuración de sesión
   const handleSessionAccept = (newSessionCount) => {
