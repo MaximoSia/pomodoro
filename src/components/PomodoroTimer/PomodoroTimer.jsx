@@ -7,10 +7,9 @@ import startSound from '../../sounds/start.mp3';
 import breakSound from '../../sounds/break.mp3';
 
 const PomodoroTimer = ({ task }) => {
-  const INITIAL_TIME = 0.1 * 60; // Tiempo inicial del Pomodoro (25 minutos)
-  const BREAK_TIME = 0.1 * 60; // Tiempo de descanso (5 minutos)
+  const INITIAL_TIME = 25 * 60; // Tiempo inicial del Pomodoro (25 minutos)
+  const BREAK_TIME = 25 * 60; // Tiempo de descanso (5 minutos)
 
-  // Estados principales
   const [timeLeft, setTimeLeft] = useState(INITIAL_TIME);
   const [isRunning, setIsRunning] = useState(false);
   const [currentPomodoro, setCurrentPomodoro] = useState(0);
@@ -82,7 +81,7 @@ const PomodoroTimer = ({ task }) => {
     setShowSessionToggle(false);
     resetTimer();
   };
-
+  // Manejo de inicio de temporizador
   const handleStart = () => {
     setIsRunning(true);
     // Reproducir sonido al iniciar un pomodoro
